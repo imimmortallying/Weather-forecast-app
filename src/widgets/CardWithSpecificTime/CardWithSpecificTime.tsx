@@ -1,7 +1,7 @@
 import cls from "./CardWithSpecificTime.module.css";
 import WindSvg from "../../shared/assets/wind-speed.svg";
 import HumiditySvg from "../../shared/assets/humidity.svg";
-import type { IDayWeather, SharedTypes } from "../../shared/types";
+import type { SharedTypes } from "../../shared/types";
 import WeatherDetail from "../../entities/WeatherDetail/WeatherDetail";
 import DateTitle from "../../shared/DateTitle/DateTitle";
 import WeatherIcon from "../../shared/WeatherIcon/WeatherIcon";

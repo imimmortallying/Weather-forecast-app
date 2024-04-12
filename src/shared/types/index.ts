@@ -5,7 +5,7 @@ export namespace SharedTypes {
     date: string;
     temp: number;
     humidity: number;
-    wind: string;
+    wind: number;
     description: string;
     icon: string;
   }

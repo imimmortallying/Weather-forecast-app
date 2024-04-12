@@ -3,11 +3,9 @@ import { useRef } from "react";
 import { observableWeatherForecastStore } from "../../store";
 import { Euler, Vector3 } from "@react-three/fiber";
 import { observer } from "mobx-react-lite";
-import { appDtos } from "../../App.dto";
 import CardWithFullDayForecast from "../CardWithFullDayForecast/CardWithFullDayForecast";
 import CardWithSpecificTime from "../CardWithSpecificTime/CardWithSpecificTime";
 import { StatusWraper } from "../../shared/StatusWraper/StatusWraper";
-import { toJS } from "mobx";
 
 const cards: Array<{ id: number; position: Vector3; rotation: Euler }> = [
   // {
@@ -49,7 +47,6 @@ function Box() {
     "loadCurrentForecastData",
     "loadFullDayForecastData",
   ]));
-  // console.log('3222', toJS(services.api.stateList));
   return (
     <mesh ref={ref}>
       <boxGeometry args={[3, 3, 3]} />
@@ -71,6 +68,7 @@ function Box() {
           <CardWithFullDayForecast
             forecastArray={observableWeatherForecastStore.fullDayForecast}
             currentWeather={observableWeatherForecastStore.currentTimeForecast}
+            city={observableWeatherForecastStore.city}
           />
         </Html>
       </StatusWraper>

@@ -6,7 +6,7 @@ type ForecastDayWeather = {
   dt_txt: string;
   main: { temp: number; humidity: number};
   weather: Array<{ description: string; icon: string }>;
-  wind: { speed: string };
+  wind: { speed: number };
 };
 
 type CurrentDayWeather = Omit<ForecastDayWeather, 'dt_txt'>;

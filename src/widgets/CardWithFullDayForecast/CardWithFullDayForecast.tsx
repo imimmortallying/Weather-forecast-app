@@ -1,23 +1,24 @@
 import cls from "./CardWithFullDayForecast.module.css";
-import type { ICurrentDayWeather, IDayWeather } from "../../shared/types";
+import type { SharedTypes } from "../../shared/types";
 import DateTitle from "../../shared/DateTitle/DateTitle";
 import WeatherIcon from "../../shared/WeatherIcon/WeatherIcon";
 import Text from "../../shared/Text/Text";
 
 interface ICardWithFullForecastProps {
   className?: string;
-  forecastArray: IDayWeather[];
-  currentWeather: ICurrentDayWeather;
+  forecastArray: SharedTypes.DayWeatherEntity[];
+  currentWeather: Omit<SharedTypes.DayWeatherEntity, "date"> | null;
+  city: string
 }
 
-function CardWithFullDayForecast({ forecastArray, currentWeather }: ICardWithFullForecastProps) {
+function CardWithFullDayForecast({ forecastArray, currentWeather, city }: ICardWithFullForecastProps) {
   return (
     <div className={cls.Card}>
       <div className={cls.container}>
         <div className={cls.main}>
-          <Text textValue={currentWeather.city} className={cls.cityName} />
+          <Text textValue={city} className={cls.cityName} />
           <Text
-            textValue={currentWeather.temp}
+            textValue={currentWeather!.temp}
             unitSign="°c"
             className={cls.temperatureTitle}
           />

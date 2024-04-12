@@ -5,9 +5,10 @@ interface IWeatherDetailProps {
   iconPath: string;
   amount: number;
   unitSign: string;
+  textValue: string;
 }
 
-function WeatherDetail({ iconPath, amount, unitSign }: IWeatherDetailProps) {
+function WeatherDetail({ iconPath, amount, unitSign, textValue }: IWeatherDetailProps) {
   return (
     <div className={cls.detail}>
       <img className={cls.image} src={iconPath}></img>
@@ -17,7 +18,7 @@ function WeatherDetail({ iconPath, amount, unitSign }: IWeatherDetailProps) {
         className={cls.amount}
         mathFloor={false}
       />
-      <Text textValue="Скорость ветра" />
+      <Text textValue={textValue} />
     </div>
   );
 }

@@ -34,8 +34,9 @@ function CardWithSpecificTime({
             amount={humidity}
             iconPath={HumiditySvg}
             unitSign="%"
+            textValue="влажность"
           />
-          <WeatherDetail amount={wind} iconPath={WindSvg} unitSign="км/ч" />
+          <WeatherDetail amount={wind} iconPath={WindSvg} unitSign="км/ч" textValue="скорость ветра"/>
         </div>
       </div>
     </div>

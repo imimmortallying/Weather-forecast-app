@@ -43,10 +43,7 @@ const cards: Array<{ id: number; position: Vector3; rotation: Euler }> = [
 function Box() {
   const ref = useRef(null);
   const { services } = observableWeatherForecastStore;
-  console.log('322', services.api.getMergedStatus([
-    "loadCurrentForecastData",
-    "loadFullDayForecastData",
-  ]));
+
   return (
     <mesh ref={ref}>
       <boxGeometry args={[3, 3, 3]} />
@@ -56,6 +53,8 @@ function Box() {
           "loadCurrentForecastData",
           "loadFullDayForecastData",
         ])}
+        position={[0, 0, 1.501]}
+        rotation={[0, 0, 0]}
       >
         <Html
           occlude
@@ -79,6 +78,9 @@ function Box() {
             status={
               services.api.getState("loadFullDayForecastData").state.status
             }
+            position={card.position}
+            rotation={card.rotation}
+            key={card.id}
           >
             <Html
               occlude

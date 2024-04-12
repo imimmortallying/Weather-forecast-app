@@ -17,7 +17,7 @@ export const WeatherService = {
 
     } catch (error) {
       console.error("error", error);
-      //! прокинуть ошибку выше
+      //! прокинуть ошибку выше, если нужно будет вывести что-то осмысленное
     }
   },
 

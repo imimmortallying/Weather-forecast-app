@@ -15,34 +15,41 @@ export class ApiService<Keys extends string> {
   }
 
   start(key: Keys) {
-    this.stateList.forEach((item) => {
-      if (item.key === key) {
-        item.state.error = null;
-        item.state.status = "loading";
-      }
-    });
+      this.stateList = this.stateList.map((item)=>{
+        if (item.key === key) {
+          return {
+            ...item,
+            state: { status: "loading", error: null }
+          }
+        } else return item;
+      });
   }
 
   success(key: Keys) {
-    this.stateList.forEach((item) => {
+    this.stateList = this.stateList.map((item)=>{
       if (item.key === key) {
-        item.state.error = null;
-        item.state.status = "success";
-      }
+        return {
+          ...item,
+          state: { status: "success", error: null }
+        }
+      } else return item;
     });
   }
 
   error(key: Keys, error: string) {
-    this.stateList.forEach((item) => {
+
+    this.stateList = this.stateList.map((item)=>{
       if (item.key === key) {
-        item.state.error = error;
-        item.state.status = "error";
-      }
+        return {
+          ...item,
+          state: { status: "error", error: error }
+        }
+      } else return item;
     });
   }
 
   getState(key: Keys) {
-    const targetItem = this.stateList.find((item) => (item.key = key));
+    const targetItem = this.stateList.find((item) => (item.key === key));
     if (!targetItem) {
       throw new Error("wrong key");
     }
@@ -50,7 +57,10 @@ export class ApiService<Keys extends string> {
   }
 
   getMergedStatus(keys: Keys[]): SharedTypes.Status {
-    const result = keys.map((key) => this.getState(key).state.status);
+    const result = keys.map((key) => {
+      return this.getState(key).state.status
+    });
+    console.log('result', result)
     if (result.includes("error")) return "error";
     if (result.includes("loading")) return "loading";
     return "success";

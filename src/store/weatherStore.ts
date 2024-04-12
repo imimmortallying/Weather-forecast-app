@@ -7,7 +7,6 @@ import { ApiService } from "../shared/services/ApiService";
 class WeatherStore {
   fullDayForecast: SharedTypes.DayWeatherEntity[] = [];
   city: string = "";
-  // currentTimeForecast: Omit<SharedTypes.DayWeatherEntity, "date"> | null = null;
   currentTimeForecast: Omit<SharedTypes.DayWeatherEntity, "date"> | null = null;
   services = {
     api: new ApiService(["loadFullDayForecastData", "loadCurrentForecastData"]),
@@ -19,7 +18,6 @@ class WeatherStore {
 
   async loadFullDayForecastData() {
     this.services.api.start("loadFullDayForecastData");
-
     const value = await WeatherService.getWeatherForecast();
     console.log("value", value);
     if (value) {

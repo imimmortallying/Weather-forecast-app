@@ -26,7 +26,7 @@ function CardWithFullDayForecast({ forecastArray, currentWeather, city }: ICardW
           <div className={cls.forecast}>
             {forecastArray.map((day) => {
               return (
-                <div className={cls.forecastColl}>
+                <div className={cls.forecastColl} key={day.date}>
                   <DateTitle date={day.date} />
                   <WeatherIcon src={day.icon} className={cls.weatherIcon} />
                   <Text textValue={day.temp} unitSign="°c" />

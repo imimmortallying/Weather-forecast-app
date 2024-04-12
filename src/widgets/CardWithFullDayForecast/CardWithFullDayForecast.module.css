@@ -1,0 +1,52 @@
+.Card {
+    width: 80rem;
+    height: 80rem;
+    background: linear-gradient(167deg, #42d2a6 4.7%, #007991 95.98%), #389196;
+    color: #fff;
+    font-size: 4rem;
+    text-align: center
+}
+
+.container {
+    height: 90%;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cityName{
+    font-size: 7rem;
+    font-weight: bold;
+    margin-top: 3rem;
+}
+
+.forecast{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.forecastColl{
+    display: flex;
+    flex-direction: column;
+}
+
+.date{
+    position: absolute;
+}
+
+.weatherIcon {
+    width: 12rem;
+}
+
+
+
+.temperatureTitle{
+    font-size: 13rem;
+}
+
+.description {
+    font-size: 6rem;
+}
+

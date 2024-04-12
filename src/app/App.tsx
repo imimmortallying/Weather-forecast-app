@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import Box from "./widgets/Box/Box";
+import Box from "../widgets/Box/Box";
 
 function App() {
   //-- useEffect init query
@@ -18,8 +18,6 @@ function App() {
     <div id="canvas-container">
       <Canvas>
         <Box/>
-        <ambientLight intensity={0.3} />
-        <directionalLight color="yellow" position={[0, 0, 5]} />
         <OrbitControls makeDefault />
       </Canvas>
     </div>

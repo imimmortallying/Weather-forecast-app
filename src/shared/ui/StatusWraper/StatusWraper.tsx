@@ -1,5 +1,5 @@
 import { Html } from "@react-three/drei";
-import { SharedTypes } from "../types";
+import { SharedTypes } from "../../types";
 import cls from "./StatusWraper.module.css";
 import { Euler, Vector3 } from "@react-three/fiber";
 

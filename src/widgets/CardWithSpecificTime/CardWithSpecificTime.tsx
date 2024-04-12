@@ -3,9 +3,9 @@ import WindSvg from "../../shared/assets/wind-speed.svg";
 import HumiditySvg from "../../shared/assets/humidity.svg";
 import type { SharedTypes } from "../../shared/types";
 import WeatherDetail from "../../entities/WeatherDetail/WeatherDetail";
-import DateTitle from "../../shared/DateTitle/DateTitle";
-import WeatherIcon from "../../shared/WeatherIcon/WeatherIcon";
-import Text from "../../shared/Text/Text";
+import DateTitle from "../../shared/ui/DateTitle/DateTitle";
+import WeatherIcon from "../../shared/ui/WeatherIcon/WeatherIcon";
+import Text from "../../shared/ui/Text/Text";
 
 interface ICardWithSpecificTimeProps extends SharedTypes.DayWeatherEntity {
   className?: string;

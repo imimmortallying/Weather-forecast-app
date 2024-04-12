@@ -1,4 +1,4 @@
-import Text from "../../shared/Text/Text";
+import Text from "../../shared/ui/Text/Text";
 import cls from "./WeatherDetail.module.css";
 
 interface IWeatherDetailProps {

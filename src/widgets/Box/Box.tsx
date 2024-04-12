@@ -1,11 +1,11 @@
 import { Html } from "@react-three/drei";
 import { useRef } from "react";
-import { observableWeatherForecastStore } from "../../store";
+import { observableWeatherForecastStore } from "../../app/store";
 import { Euler, Vector3 } from "@react-three/fiber";
 import { observer } from "mobx-react-lite";
 import CardWithFullDayForecast from "../CardWithFullDayForecast/CardWithFullDayForecast";
 import CardWithSpecificTime from "../CardWithSpecificTime/CardWithSpecificTime";
-import { StatusWraper } from "../../shared/StatusWraper/StatusWraper";
+import { StatusWraper } from "../../shared/ui/StatusWraper/StatusWraper";
 
 const cards: Array<{ id: number; position: Vector3; rotation: Euler }> = [
   // {

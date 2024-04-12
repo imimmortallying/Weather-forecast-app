@@ -1,5 +1,5 @@
-import { WeatherService } from "./api/services/weather/weather.service";
-import { SharedTypes } from "./shared/types";
+import { WeatherService } from "../shared/api/services/weather/weather.service";
+import { SharedTypes } from "../shared/types";
 
 type InferApiData<F> = F extends (...args: unknown[]) => infer R
   ? NonNullable<Awaited<R>>

@@ -1,8 +1,8 @@
 import { makeAutoObservable } from "mobx";
-import { WeatherService } from "../api/services/weather/weather.service";
 import { appDtos } from "../App.dto";
-import { SharedTypes } from "../shared/types";
-import { ApiService } from "../shared/services/ApiService";
+import { SharedTypes } from "../../shared/types";
+import { ApiService } from "../../shared/services/ApiService";
+import { WeatherService } from "../../shared/api/services/weather/weather.service";
 
 class WeatherStore {
   fullDayForecast: SharedTypes.DayWeatherEntity[] = [];

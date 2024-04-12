@@ -1,8 +1,8 @@
 import cls from "./CardWithFullDayForecast.module.css";
 import type { SharedTypes } from "../../shared/types";
-import DateTitle from "../../shared/DateTitle/DateTitle";
-import WeatherIcon from "../../shared/WeatherIcon/WeatherIcon";
-import Text from "../../shared/Text/Text";
+import DateTitle from "../../shared/ui/DateTitle/DateTitle";
+import WeatherIcon from "../../shared/ui/WeatherIcon/WeatherIcon";
+import Text from "../../shared/ui/Text/Text";
 
 interface ICardWithFullForecastProps {
   className?: string;
